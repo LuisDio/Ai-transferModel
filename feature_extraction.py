@@ -40,16 +40,16 @@ for img in dog_path.glob("*.png"):
     labels.append(1)
 
 # Create a single numpy array with all the images we loaded
-x_train =
+x_train = np.array(images)
 
 # Also convert the labels to a numpy array
-y_train =
+y_train = np.array(labels)
 
 # Normalize image data to 0-to-1 range
 x_train = vgg16.preprocess_input(x_train)
 
 # Load a pre-trained neural network to use as a feature extractor
-pretrained_nn =
+pretrained_nn = vgg16.VGG16(weights="imagenet", include_top=False)
 
 # Extract features for each image (all in one pass)
 features_x =
