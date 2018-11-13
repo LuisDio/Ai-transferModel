@@ -49,10 +49,10 @@ y_train = np.array(labels)
 x_train = vgg16.preprocess_input(x_train)
 
 # Load a pre-trained neural network to use as a feature extractor
-pretrained_nn = vgg16.VGG16(weights="imagenet", include_top=False)
+pretrained_nn = vgg16.VGG16(weights="imagenet", include_top=False, input_shape=(64, 64, 3))
 
 # Extract features for each image (all in one pass)
-features_x =
+features_x = pretrained_nn.predict(x_train)
 
 # Save the array of extracted features to a file
 joblib.dump(features_x, "x_train.dat")
